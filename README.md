@@ -67,15 +67,39 @@ Display original color image, histogram, enhanced image, and enhanced histogram 
 
 ---
 
-## Program
+
 
 ### Developed By:
-**Name:** ____________________________  
+**Name:**   
 
 ### Register No:
-____________________________  
+## Program
+## 1. Import the required libraries and read the grayscale image.
+```py
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+img = cv2.imread(r'C:\Users\acer\Pictures\Screenshots\Screenshot 2026-08-19 161149.png', cv2.IMREAD_GRAYSCALE)
+plt.imshow(img, cmap='gray')
+plt.title('Original Image')
+plt.show()
+```
+## 2. Plot the histogram of the grayscale image.
+```
+plt.hist(img.ravel(), 256, range=[0,256])
+plt.title('Original Image Histogram')
+plt.show()
+```
+## 3. Apply histogram equalization.
+```
+img_eq = cv2.equalizeHist(img)
 
----
+```
+
+
+ 
+
+
 
 ##  Output
 
